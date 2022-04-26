@@ -86,8 +86,6 @@ function getList($book, $offset, $limit)
 function del($book, $book_id, $user_id)
 {
     $data = $book->del($book_id, $user_id);
-    $tmp1806 = $data;
-    file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/log.txt', date("d/m/Y - H:i:s") . ' ' . ': ' . print_r($tmp1806, true) . PHP_EOL, FILE_APPEND);
     if ($data) {
         header('HTTP/1.0 200 OK');
         echo json_encode(array(
